@@ -1424,6 +1424,152 @@ html {
   margin-bottom: 6px;
 }
 
+.map-sidebar {
+  position: absolute;
+  top: 40px;
+  right: -5px;
+  z-index: 1000;
+  width: 350px;
+  max-height: 80vh;
+  background-color: var(--bg-2);
+  border: 1px solid var(--stroke);
+  border-radius: 8px;
+  color: var(--ink-1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--stroke) var(--bg-2);
+}
+
+.map-sidebar h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+#map-search {
+  width: 100%;
+  padding: 8px 8px 8px 12px;
+  background-color: var(--bg-3);
+  border: 1px solid var(--stroke);
+  border-radius: 4px;
+  color: var(--ink-1);
+  font-size: 0.9rem;
+  transition: border-color 0.2s;
+  outline: none;
+  box-sizing: border-box;
+}
+
+#map-search::placeholder {
+  color: var(--ink-3);
+  font-style: italic;
+}
+
+#map-search:focus {
+  border-color: var(--accent);
+  background-color: var(--bg-1);
+}
+
+.map-sidebar.collapsed {
+  background: transparent;
+  border-color: transparent;
+  box-shadow: none;
+  overflow: visible;
+  width: auto;
+}
+
+#map-filters-body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 16px;
+}
+
+#map-filters-body.open {
+  display: flex;
+}
+
+#map-filters-body:not(.open) {
+  display: none;
+}
+
+.map-sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--stroke-soft);
+}
+
+/* Button inside the header when panel is open */
+.map-filter-toggle {
+  background: transparent;
+  border: 1px solid var(--stroke);
+  border-radius: 6px;
+  color: var(--ink-3);
+  height: 28px;
+  padding: 0 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: "TrajanPro", serif;
+  font-size: 0.75rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  white-space: nowrap;
+  transition:
+    background 0.15s,
+    color 0.15s,
+    border-color 0.15s;
+}
+
+.map-filter-toggle:hover {
+  background: rgba(197, 106, 45, 0.12);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* Standalone "Show Filters" button when collapsed */
+.map-filter-show-btn {
+  background: var(--accent);
+  border: 1px solid var(--stroke);
+  border-radius: 8px;
+  color: var(--ink-2);
+  height: 34px;
+  padding: 0 14px;
+  display: none;
+  align-items: center;
+  gap: 8px;
+  font-family: "TrajanPro", serif;
+  font-size: 0.78rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  white-space: nowrap;
+  transition:
+    background 0.15s,
+    color 0.15s,
+    border-color 0.15s;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+.map-filter-show-btn:hover {
+  background: rgba(197, 106, 45, 0.15);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.map-sidebar.collapsed .map-filter-show-btn {
+  display: flex;
+}
+
 #wishes-grid {
   display: flex;
   flex-direction: column;
@@ -2631,152 +2777,6 @@ main::-webkit-scrollbar-thumb:hover {
 
 #mapPinsOverlay.hidden {
   display: none;
-}
-
-.map-sidebar {
-  position: absolute;
-  top: 40px;
-  right: -5px;
-  z-index: 1000;
-  width: 350px;
-  max-height: 80vh;
-  background-color: var(--bg-2);
-  border: 1px solid var(--stroke);
-  border-radius: 8px;
-  color: var(--ink-1);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-  display: flex;
-  flex-direction: column;
-  overflow-y: auto;
-  scrollbar-width: thin;
-  scrollbar-color: var(--stroke) var(--bg-2);
-}
-
-#map-search {
-  width: 100%;
-  padding: 8px 8px 8px 12px;
-  background-color: var(--bg-3);
-  border: 1px solid var(--stroke);
-  border-radius: 4px;
-  color: var(--ink-1);
-  font-size: 0.9rem;
-  transition: border-color 0.2s;
-  outline: none;
-  box-sizing: border-box;
-}
-
-#map-search::placeholder {
-  color: var(--ink-3);
-  font-style: italic;
-}
-
-#map-search:focus {
-  border-color: var(--accent);
-  background-color: var(--bg-1);
-}
-
-.map-sidebar.collapsed {
-  background: transparent;
-  border-color: transparent;
-  box-shadow: none;
-  overflow: visible;
-  width: auto;
-}
-
-#map-filters-body {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  padding: 16px;
-}
-
-#map-filters-body.open {
-  display: flex;
-}
-
-#map-filters-body:not(.open) {
-  display: none;
-}
-
-.map-sidebar-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-bottom: 8px;
-  border-bottom: 1px solid var(--stroke-soft);
-}
-
-.map-sidebar h3 {
-  margin: 0;
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: var(--accent);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
-/* Button inside the header when panel is open */
-.map-filter-toggle {
-  background: transparent;
-  border: 1px solid var(--stroke);
-  border-radius: 6px;
-  color: var(--ink-3);
-  height: 28px;
-  padding: 0 10px;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  font-family: "TrajanPro", serif;
-  font-size: 0.75rem;
-  font-weight: bold;
-  text-transform: uppercase;
-  cursor: pointer;
-  white-space: nowrap;
-  transition:
-    background 0.15s,
-    color 0.15s,
-    border-color 0.15s;
-}
-
-.map-filter-toggle:hover {
-  background: rgba(197, 106, 45, 0.12);
-  border-color: var(--accent);
-  color: var(--accent);
-}
-
-/* Standalone "Show Filters" button when collapsed */
-.map-filter-show-btn {
-  background: var(--accent);
-  border: 1px solid var(--stroke);
-  border-radius: 8px;
-  color: var(--ink-2);
-  height: 34px;
-  padding: 0 14px;
-  display: none;
-  align-items: center;
-  gap: 8px;
-  font-family: "TrajanPro", serif;
-  font-size: 0.78rem;
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  cursor: pointer;
-  white-space: nowrap;
-  transition:
-    background 0.15s,
-    color 0.15s,
-    border-color 0.15s;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
-}
-
-.map-filter-show-btn:hover {
-  background: rgba(197, 106, 45, 0.15);
-  border-color: var(--accent);
-  color: var(--accent);
-}
-
-.map-sidebar.collapsed .map-filter-show-btn {
-  display: flex;
 }
 
 .filter-controls {
