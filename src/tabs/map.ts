@@ -149,4 +149,26 @@ export function updateTabMap(): void {
       fitToScreen();
     });
   }
+
+  const toggleHide = document.querySelector<HTMLButtonElement>(
+    "#toggle-map-filters",
+  );
+  const toggleShow = document.querySelector<HTMLButtonElement>(
+    "#toggle-map-filters-collapsed",
+  );
+  const filtersBody = document.querySelector<HTMLElement>("#map-filters-body");
+  const sidebar = document.querySelector<HTMLElement>(".map-sidebar");
+
+  const openFilters = () => {
+    filtersBody?.classList.add("open");
+    sidebar?.classList.remove("collapsed");
+  };
+
+  const closeFilters = () => {
+    filtersBody?.classList.remove("open");
+    sidebar?.classList.add("collapsed");
+  };
+
+  toggleHide?.addEventListener("click", closeFilters);
+  toggleShow?.addEventListener("click", openFilters);
 }

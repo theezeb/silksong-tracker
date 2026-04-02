@@ -223,24 +223,49 @@
             </div>
           </div>
 
-          <div class="map-sidebar">
-            <h3>Map Filters</h3>
+          <div class="map-sidebar collapsed">
+            <div id="map-filters-body">
+              <div class="map-sidebar-header">
+                <h3>Map Filters</h3>
+                <button
+                  id="toggle-map-filters"
+                  class="map-filter-toggle"
+                  title="Hide filters"
+                >
+                  <i class="fa-solid fa-sliders"></i>
+                  <span>Hide Filters</span>
+                </button>
+              </div>
 
-            <div class="search-container">
-              <input
-                type="text"
-                id="map-search"
-                placeholder="Search item..."
-                autocomplete="off"
-              />
+              <div class="search-container">
+                <input
+                  type="text"
+                  id="map-search"
+                  placeholder="Search item..."
+                  autocomplete="off"
+                />
+              </div>
+
+              <div class="filter-controls">
+                <button id="show-all-filters" class="btn-small">
+                  Show All
+                </button>
+                <button id="hide-all-filters" class="btn-small">
+                  Hide All
+                </button>
+              </div>
+
+              <div id="map-filters" class="filter-list"></div>
             </div>
 
-            <div class="filter-controls">
-              <button id="show-all-filters" class="btn-small">Show All</button>
-              <button id="hide-all-filters" class="btn-small">Hide All</button>
-            </div>
-
-            <div id="map-filters" class="filter-list"></div>
+            <!-- This stays outside so it's always visible when collapsed -->
+            <button
+              id="toggle-map-filters-collapsed"
+              class="map-filter-show-btn"
+            >
+              <i class="fa-solid fa-sliders"></i>
+              <span>Show Filters</span>
+            </button>
           </div>
         </section>
 
