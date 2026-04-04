@@ -1480,8 +1480,8 @@
           "mapCategory": "maps",
           "mapViewer": {
             "src": "assets/ui/labelled_map_act3.png",
-            "x": 0.0,
-            "y": 0.0,
+            "x": 0.369,
+            "y": 0.438,
             "zoom": 2.0
           },
           "showOnMap": true,
@@ -1508,8 +1508,8 @@
           "mapCategory": "maps",
           "mapViewer": {
             "src": "assets/ui/labelled_map_act3.png",
-            "x": 0.0,
-            "y": 0.0,
+            "x": 0.311,
+            "y": 0.276,
             "zoom": 2.0
           },
           "showOnMap": true,
@@ -1546,8 +1546,8 @@
           "mapCategory": "maps",
           "mapViewer": {
             "src": "assets/ui/labelled_map_act3.png",
-            "x": 0.0,
-            "y": 0.0,
+            "x": 0.889,
+            "y": 0.565,
             "zoom": 2.0
           },
           "showOnMap": true,
@@ -1564,8 +1564,8 @@
           "mapCategory": "maps",
           "mapViewer": {
             "src": "assets/ui/labelled_map_act3.png",
-            "x": 0.0,
-            "y": 0.0,
+            "x": 0.49,
+            "y": 0.941,
             "zoom": 2.0
           },
           "showOnMap": true,
@@ -1582,8 +1582,8 @@
           "mapCategory": "maps",
           "mapViewer": {
             "src": "assets/ui/labelled_map_act3.png",
-            "x": 0.0,
-            "y": 0.0,
+            "x": 0.499,
+            "y": 0.262,
             "zoom": 2.0
           },
           "showOnMap": true,
@@ -1600,15 +1600,15 @@
           "mapCategory": "maps",
           "mapViewer": {
             "src": "assets/ui/labelled_map_act3.png",
-            "x": 0.0,
-            "y": 0.0,
+            "x": 0.617,
+            "y": 0.268,
             "zoom": 2.0
           },
           "showOnMap": true,
           "type": "flag"
         },
         {
-          "act": 2,
+          "act": 3,
           "description": "Obtained from a map machine in Act 2. Found next to a broken map machine in Act 3.",
           "flag": "HasCradleMap",
           "icon": "completion/The_Cradle_Map.png",
@@ -1618,8 +1618,8 @@
           "mapCategory": "maps",
           "mapViewer": {
             "src": "assets/ui/labelled_map_act3.png",
-            "x": 0.0,
-            "y": 0.0,
+            "x": 0.519,
+            "y": 0.139,
             "zoom": 2.0
           },
           "showOnMap": true,
@@ -1636,8 +1636,8 @@
           "mapCategory": "maps",
           "mapViewer": {
             "src": "assets/ui/labelled_map_act3.png",
-            "x": 0.0,
-            "y": 0.0,
+            "x": 0.601,
+            "y": 0.237,
             "zoom": 2.0
           },
           "showOnMap": true,
@@ -1654,8 +1654,8 @@
           "mapCategory": "maps",
           "mapViewer": {
             "src": "assets/ui/labelled_map_act3.png",
-            "x": 0.0,
-            "y": 0.0,
+            "x": 0.733,
+            "y": 0.247,
             "zoom": 2.0
           },
           "showOnMap": true,
@@ -1672,8 +1672,8 @@
           "mapCategory": "maps",
           "mapViewer": {
             "src": "assets/ui/labelled_map_act3.png",
-            "x": 0.0,
-            "y": 0.0,
+            "x": 0.293,
+            "y": 0.753,
             "zoom": 2.0
           },
           "showOnMap": true,
@@ -1740,8 +1740,8 @@
           "mapCategory": "maps",
           "mapViewer": {
             "src": "assets/ui/labelled_map_act3.png",
-            "x": 0.0,
-            "y": 0.0,
+            "x": 0.489,
+            "y": 0.241,
             "zoom": 2.0
           },
           "showOnMap": true,
@@ -1753,13 +1753,31 @@
           "flag": "HasHallsMap",
           "icon": "completion/Choral_Chambers_Map.png",
           "id": "map-halls",
-          "label": "Choral Chambers Map",
+          "label": "Choral Chambers Map #1",
           "link": "https://hollowknight.wiki/w/Map_and_Quill_(Silksong)#Maps",
           "mapCategory": "maps",
           "mapViewer": {
             "src": "assets/ui/labelled_map_act3.png",
-            "x": 0.0,
-            "y": 0.0,
+            "x": 0.401,
+            "y": 0.345,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
+          "type": "flag"
+        },
+        {
+          "act": 1,
+          "description": "Obtained from a map machine.",
+          "flag": "HasHallsMap",
+          "icon": "completion/Choral_Chambers_Map.png",
+          "id": "map-halls",
+          "label": "Choral Chambers Map #2",
+          "link": "https://hollowknight.wiki/w/Map_and_Quill_(Silksong)#Maps",
+          "mapCategory": "maps",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.583,
+            "y": 0.351,
             "zoom": 2.0
           },
           "showOnMap": true,
@@ -1776,8 +1794,8 @@
           "mapCategory": "maps",
           "mapViewer": {
             "src": "assets/ui/labelled_map_act3.png",
-            "x": 0.0,
-            "y": 0.0,
+            "x": 0.334,
+            "y": 0.429,
             "zoom": 2.0
           },
           "showOnMap": true,
@@ -1794,8 +1812,8 @@
           "mapCategory": "maps",
           "mapViewer": {
             "src": "assets/ui/labelled_map_act3.png",
-            "x": 0.0,
-            "y": 0.0,
+            "x": 0.481,
+            "y": 0.372,
             "zoom": 2.0
           },
           "showOnMap": true,
@@ -2184,8 +2202,8 @@
           "mapCategory": "needle",
           "mapViewer": {
             "src": "assets/ui/labelled_map_act3.png",
-            "x": 0.0,
-            "y": 0.0,
+            "x": 0.58,
+            "y": 0.188,
             "zoom": 2.0
           },
           "relatedFlag": "ConstructedMaterium",
@@ -2204,8 +2222,8 @@
           "mapCategory": "needle",
           "mapViewer": {
             "src": "assets/ui/labelled_map_act3.png",
-            "x": 0.0,
-            "y": 0.0,
+            "x": 0.591,
+            "y": 0.913,
             "zoom": 2.0
           },
           "relatedFlag": "ConstructedFarsight",

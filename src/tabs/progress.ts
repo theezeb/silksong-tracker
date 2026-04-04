@@ -1163,7 +1163,6 @@ function fuzzyMatch(text: string, pattern: string): boolean {
     return false;
   }
 
-  // Fuzzy: require matched chars to be "dense" — no huge gaps
   let pi = 0;
   let firstMatch = -1;
   let lastMatch = -1;
