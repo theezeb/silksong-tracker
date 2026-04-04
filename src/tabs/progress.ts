@@ -1042,8 +1042,9 @@ function collectAllItems(): readonly Item[] {
 function renderWorldMapPins() {
   const img = document.querySelector<HTMLImageElement>("#worldMap");
   const overlay = document.querySelector<HTMLDivElement>("#mapPinsOverlay");
-
   const searchInput = document.querySelector<HTMLInputElement>("#map-search");
+  const searchCount = document.querySelector<HTMLElement>("#map-search-count");
+
   if (searchInput) {
     searchInput.addEventListener("input", renderWorldMapPins);
   }
@@ -1055,7 +1056,6 @@ function renderWorldMapPins() {
 
   const currentSrc = img.getAttribute("src") ?? "";
   const currentResolved = resolveMapImageSrc(currentSrc);
-
   const searchTerm = searchInput ? searchInput.value.trim().toLowerCase() : "";
 
   const items = collectAllItems();
@@ -1075,6 +1075,8 @@ function renderWorldMapPins() {
     }
   }
 
+  let matchCount = 0;
+
   for (const item of items) {
     if (
       item.showOnMap !== true
@@ -1084,7 +1086,7 @@ function renderWorldMapPins() {
       continue;
     }
 
-    if (searchTerm !== "" && !item.label.toLowerCase().includes(searchTerm)) {
+    if (searchTerm !== "" && !fuzzyMatch(item.label, searchTerm)) {
       continue;
     }
 
@@ -1101,6 +1103,8 @@ function renderWorldMapPins() {
     if (pinSrc === "") {
       continue;
     }
+
+    matchCount++;
 
     const pin = document.createElement("img");
     pin.className = "map-pin";
@@ -1126,6 +1130,13 @@ function renderWorldMapPins() {
 
     overlay.append(pin);
   }
+
+  if (searchCount) {
+    searchCount.textContent =
+      searchTerm === ""
+        ? ""
+        : `${matchCount} result${matchCount === 1 ? "" : "s"}`;
+  }
 }
 
 function formatLabel(slug: string): string {
@@ -1133,6 +1144,44 @@ function formatLabel(slug: string): string {
     .split("-")
     .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
     .join(" ");
+}
+
+function fuzzyMatch(text: string, pattern: string): boolean {
+  if (pattern === "") {
+    return true;
+  }
+  const t = text.toLowerCase();
+  const p = pattern.toLowerCase();
+
+  // Always prefer substring match first.
+  if (t.includes(p)) {
+    return true;
+  }
+
+  // Only allow fuzzy for patterns of 3+ chars to avoid noise.
+  if (p.length < 3) {
+    return false;
+  }
+
+  // Fuzzy: require matched chars to be "dense" — no huge gaps
+  let pi = 0;
+  let firstMatch = -1;
+  let lastMatch = -1;
+  for (let ti = 0; ti < t.length && pi < p.length; ti++) {
+    if (t[ti] === p[pi]) {
+      if (firstMatch === -1) {
+        firstMatch = ti;
+      }
+      lastMatch = ti;
+      pi++;
+    }
+  }
+  if (pi < p.length) {
+    return false;
+  }
+
+  const spanRatio = (lastMatch - firstMatch + 1) / t.length;
+  return spanRatio < 0.5;
 }
 
 function generateFilterCheckboxes() {

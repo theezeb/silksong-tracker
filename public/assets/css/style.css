@@ -1465,6 +1465,13 @@ html {
   box-sizing: border-box;
 }
 
+#map-search-count {
+  font-size: 0.75rem;
+  color: var(--ink-2);
+  white-space: nowrap;
+  min-width: 60px;
+}
+
 #map-search::placeholder {
   color: var(--ink-3);
   font-style: italic;
@@ -2831,7 +2838,9 @@ main::-webkit-scrollbar-thumb:hover {
 }
 
 .search-container {
-  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .btn-reset {
