@@ -78,6 +78,14 @@ function onChange() {
     .filter((checkboxInfo) => checkboxInfo.checkbox.checked)
     .map((checkboxInfo) => checkboxInfo.act);
 
+  // Keep Act 1 selected instead of showing empty page.
+  if (selectedActs.length === 0) {
+    const act1CheckboxInfo = checkboxInfos.find((info) => info.act === 1);
+    assertDefined(act1CheckboxInfo, "Failed to find the Act 1 checkbox.");
+    act1CheckboxInfo.checkbox.checked = true;
+    selectedActs.push(1);
+  }
+
   // Save selection
   const selectedActsString = JSON.stringify(selectedActs);
   localStorage.setItem(LOCAL_STORAGE_KEY, selectedActsString);
